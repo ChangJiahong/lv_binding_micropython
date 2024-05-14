@@ -108,28 +108,28 @@ function(all_lv_bindings)
         
     # ESPIDF bindings
 
-    if(ESP_PLATFORM)
-        file(GLOB_RECURSE LV_ESPIDF_HEADERS ${IDF_PATH}/components/*.h ${LV_BINDINGS_DIR}/driver/esp32/*.h)
-        lv_bindings(
-            OUTPUT
-                ${LV_ESPIDF}
-            INPUT
-                ${LV_BINDINGS_DIR}/driver/esp32/espidf.h
-            DEPENDS
-                ${LV_ESPIDF_HEADERS}
-            GEN_OPTIONS
-                 -M espidf
-            FILTER
-                i2s_ll.h
-                i2s_hal.h
-                esp_intr_alloc.h
-                soc/spi_periph.h
-                rom/ets_sys.h
-                soc/sens_struct.h
-                soc/rtc.h
-                driver/periph_ctrl.h
-        )
-    endif(ESP_PLATFORM)
+#    if(ESP_PLATFORM)
+#        file(GLOB_RECURSE LV_ESPIDF_HEADERS ${IDF_PATH}/components/*.h ${LV_BINDINGS_DIR}/driver/esp32/*.h)
+#        lv_bindings(
+#            OUTPUT
+#                ${LV_ESPIDF}
+#            INPUT
+#                ${LV_BINDINGS_DIR}/driver/esp32/espidf.h
+#            DEPENDS
+#                ${LV_ESPIDF_HEADERS}
+#            GEN_OPTIONS
+#                 -M espidf
+#            FILTER
+#                i2s_ll.h
+#                i2s_hal.h
+#                esp_intr_alloc.h
+#                soc/spi_periph.h
+#                rom/ets_sys.h
+#                soc/sens_struct.h
+#                soc/rtc.h
+#                driver/periph_ctrl.h
+#        )
+#    endif(ESP_PLATFORM)
 
 endfunction()
 
@@ -147,9 +147,9 @@ set(LV_SRC
 
 if(ESP_PLATFORM)
     LIST(APPEND LV_SRC
-        ${LV_BINDINGS_DIR}/driver/esp32/espidf.c
-        ${LV_BINDINGS_DIR}/driver/esp32/modrtch.c
-        ${LV_BINDINGS_DIR}/driver/esp32/sh2lib.c
-        ${LV_ESPIDF}
+#        ${LV_BINDINGS_DIR}/driver/esp32/espidf.c
+#        ${LV_BINDINGS_DIR}/driver/esp32/modrtch.c
+#        ${LV_BINDINGS_DIR}/driver/esp32/sh2lib.c
+#        ${LV_ESPIDF}
     )
 endif(ESP_PLATFORM)

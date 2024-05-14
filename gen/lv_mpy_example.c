@@ -82,7 +82,7 @@ GENMPY_UNUSED STATIC const mp_obj_type_t mp_lv_type_fun_builtin_var = {
     .flags = MP_TYPE_FLAG_BINDS_SELF | MP_TYPE_FLAG_BUILTIN_FUN,
     .name = MP_QSTR_function,
     .call = lv_fun_builtin_var_call,
-    .unary_op = mp_generic_unary_op,
+//    .unary_op = mp_generic_unary_op,
     .buffer_p = { .get_buffer = mp_func_get_buffer }
 };
 
@@ -91,7 +91,7 @@ GENMPY_UNUSED STATIC const mp_obj_type_t mp_lv_type_fun_builtin_static_var = {
     .flags = MP_TYPE_FLAG_BUILTIN_FUN,
     .name = MP_QSTR_function,
     .call = lv_fun_builtin_var_call,
-    .unary_op = mp_generic_unary_op,
+//    .unary_op = mp_generic_unary_op,
     .buffer_p = { .get_buffer = mp_func_get_buffer }
 };
 

@@ -287,7 +287,7 @@ STATIC void enable_touch_sense(rtch_t *self)
     // Configure touch sense and configure interrupt
 
     gpio_config(&(gpio_config_t){
-        .intr_type = GPIO_PIN_INTR_POSEDGE,
+        .intr_type = GPIO_INTR_POSEDGE,
         .mode = GPIO_MODE_INPUT,
         .pull_down_en = 1,
         .pin_bit_mask = (1ULL<<self->touch_sense),
